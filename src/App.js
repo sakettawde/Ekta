@@ -6,6 +6,9 @@ import Home from "./screens/Home";
 import Onboard1 from "./screens/Onboard1";
 import Onboard2 from "./screens/Onboard2";
 import { auth } from "./util/base"
+import Loader from './comps/Loading';
+import ViewProfile from './screens/ViewProfile';
+import EditWork from './screens/EditWork';
 
 // Authorization HOC (Higher-Order components)
 const Authorization = (WrappedComponent, user) => {
@@ -64,7 +67,7 @@ class App extends Component {
     const user = this.state.user
 
     if (this.state.loading) {
-      return(<div>Loading, please wait</div>)
+      return(<Loader/>)
     }
 
     return (
@@ -74,6 +77,8 @@ class App extends Component {
       <Route exact path="/logout" component={Authorization(Logout, user)} />
       <Route exact path="/onboard1" component={Authorization(Onboard1, user)} />
       <Route exact path="/onboard2" component={Authorization(Onboard2, user)} />
+      <Route exact path="/viewprofile" component={Authorization(ViewProfile, user)} />
+      <Route exact path="/editwork" component={Authorization(EditWork, user)} />
       </div>
     );
   }

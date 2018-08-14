@@ -61,6 +61,8 @@ class Onboard2 extends Component {
     city,
     state,
     pincode,
+    avatar:1,
+    onBoarded:false
       }})
       .then(() => {
         console.log("data updated")

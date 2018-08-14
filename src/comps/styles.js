@@ -24,6 +24,7 @@ export const TextButton = styled.button`
   border: none;
   text-decoration: underline;
   opacity: 0.5;
+  cursor: pointer;
 `
 
 export const Input = styled.input`
@@ -40,12 +41,34 @@ export const Input = styled.input`
     outline: 0;
   }
 `
+export const Select = styled.select`
+  border-radius: 4px;
+  border: 1px solid #cfd8dc;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  padding: 4px;
+  margin: 8px;
+  &:focus {
+    border: 1px solid #607d8b;
+    box-shadow: 0 0 5px #cfd8dc;
+    /* background-color: #eee; */
+    outline: 0;
+  }
+`
+
 
 export const DisclaimText = styled.span`
   font-size: 10px;
   color: #607d8b;
   text-align: center;
   margin: 8px;
+`
+
+export const ProfileSubHead = styled.span`
+  font-size: 24px;
+  color: #607d8b;
+  font-family:"Open Sans", sans-serif;
+  opacity: 0.8;
 `
 
 export const Logo = styled.img`
@@ -56,14 +79,35 @@ export const Logo = styled.img`
 export const Avatar = styled.img`
   width: 98px;
 `
+export const Icon = styled.img`
+  width: 42px;
+`
 
 export const Banner = styled.div`
-background: #7986CB;
-display:flex;
-/* align-items:center; */
-color: #fff;
-border-radius:8px;
-padding:8px;`
+  /* background: #7986CB; */
+  display: flex;
+  /* align-items:center; */
+  color: ${props => (props.disabled ? "grey" : "black")};
+  /* border-radius:8px; */
+  padding: 8px;
+  width: 100%;
+`
+
+export const FlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+
+export const Banner2 = styled.div`
+  background: ${props => (props.bgColor ? props.bgColor : "#7986CB")};
+  display: flex;
+  align-items: center;
+  color: ${props => (props.disabled ? "grey" : "white")};
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+  cursor:pointer;
+`
 
 export const Spacer = styled.div`
   flex: 1;
@@ -94,7 +138,8 @@ export const AppTitle = styled.div`
   border-radius: 16px;
   padding: 20px;
   max-width: 760px;
-  box-shadow: 0 0 5px #455A64;
+  border: 1px solid #9E9E9E;
+  /* box-shadow: 0 0 5px #455a64; */
 `
 
 export const MainName = styled.span`
@@ -105,13 +150,23 @@ export const MainName = styled.span`
 `
 
 export const UserName = styled.span`
-  font-family: "Muli", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 32px;
-  font-weight: 900;
+  font-weight: 800;
   opacity: 0.8;
-  text-align:center;
-  align-self:center;
-  justify-self:center;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+`
+
+export const AreaName = styled.span`
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  opacity: 0.8;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
 `
 
 export const SubName = styled.span`
